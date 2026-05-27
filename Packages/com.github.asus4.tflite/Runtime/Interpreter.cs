@@ -308,7 +308,7 @@ namespace TensorFlowLite
 #if UNITY_IOS && !UNITY_EDITOR
         internal const string TensorFlowLibrary = "__Internal";
 #elif UNITY_ANDROID && !UNITY_EDITOR
-        internal const string TensorFlowLibrary = "libtensorflowlite_jni";
+        internal const string TensorFlowLibrary = "libtensorflowlite_c";
 #else
         internal const string TensorFlowLibrary = "libtensorflowlite_c";
 #endif
