@@ -68,13 +68,13 @@ Included prebuilt libraries:
   ],
   "dependencies": {
     // Core TensorFlow Lite libraries
-    "com.github.asus4.tflite": "2.19.0-p3",
+    "com.github.asus4.tflite": "2.21.0-rc0",
     // Optional: Utilities for TFLite
-    "com.github.asus4.tflite.common": "2.19.0-p3",
+    "com.github.asus4.tflite.common": "2.21.0-rc0",
     // Optional: Utilities for MediaPipe
-    "com.github.asus4.mediapipe": "2.19.0-p3",
+    "com.github.asus4.mediapipe": "2.21.0-rc0",
     // Optional: Async methods are available only when UniTask is installed
-    "com.cysharp.unitask": "2.5.10",
+    "com.cysharp.unitask": "2.5.11",
     ...// other dependencies
   }
 }
