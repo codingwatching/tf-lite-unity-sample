@@ -351,6 +351,8 @@ namespace TensorFlowLite
             UInt16 = 17,
             Int4 = 18,
             BFloat16 = 19,
+            Int2 = 20,
+            UInt4 = 21,
         }
 
         public struct QuantizationParams
