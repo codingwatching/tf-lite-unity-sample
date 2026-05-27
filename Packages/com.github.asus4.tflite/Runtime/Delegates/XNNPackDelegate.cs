@@ -48,9 +48,16 @@ namespace TensorFlowLite
             // Enable XNNPack subgraph reshaping. This means that models with dynamic
             // tensors are supported and that inputs may be efficiently resized.
             ENABLE_SUBGRAPH_RESHAPING = 0x00000080,
-            // If XNNPACK has been built with Slinky, enable Slinky usage.
-            // (Ignored if XNNPACK is built without Slinky.)
-            ENABLE_SLINKY = 0x00000100,
+            // This flag indicates that XNNPACK should attempt to produce numerically
+            // consistent results from a specific build of XNNPACK. This causes XNNPACK
+            // to avoid using faster codepaths that are numerically inconsistent with any
+            // other codepath that could be used in the same compiled delegate.
+            SLOW_CONSISTENT_ARITHMETIC = 0x00000200,
+            // Disable XNNPack subgraph reshaping. This means that models with dynamic
+            // tensors are not supported.
+            DISABLE_SUBGRAPH_RESHAPING = 0x00000400,
+            // Disable delegation of dynamically quantized ops.
+            DISABLE_DYNAMICALLY_QUANTIZED_OPS = 0x00000800,
         }
 
         [StructLayout(LayoutKind.Sequential)]
@@ -59,6 +66,7 @@ namespace TensorFlowLite
             // Number of threads to use in the thread pool.
             // 0 or negative value means no thread pool used.
             public int numThreads;
+            public uint runtimeFlags;
             public Flags flags;
             // Cache for packed weights, can be shared between multiple instances of
             // delegates.
@@ -68,7 +76,11 @@ namespace TensorFlowLite
             [Obsolete("Use the flags bitfield with the TFLITE_XNNPACK_DELEGATE_FLAG_VARIABLE_OPERATORS mask.")]
             public bool handleVariableOps;
             // Path to the weight cache to load.
-            public IntPtr weight_cache_file_path; // const char*
+            public IntPtr /* const char* */ weightCacheFilePath;
+            // Explicit file descriptor for the weight cache.
+            public int weightCacheFileDescriptor;
+            // Points to an existing instance of a weight cache provider.
+            public IntPtr /* void* */ weightCacheProvider;
         }
 
         public TfLiteDelegate Delegate { get; private set; }

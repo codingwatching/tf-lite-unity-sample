@@ -10,11 +10,11 @@
   "license": "Apache License 2.0",
   "unity": "2022.3",
   "unityRelease": "0f1",
-  "version": "2.19.0-p3",
+  "version": "2.21.0-rc0",
   "hideInEditor": false,
   "dependencies": {
-    "com.github.asus4.tflite": "2.19.0-p3",
-    "com.github.asus4.tflite.common": "2.19.0-p3"
+    "com.github.asus4.tflite": "2.21.0-rc0",
+    "com.github.asus4.tflite.common": "2.21.0-rc0"
   },
   "repository": {
     "type": "git",
