@@ -8,7 +8,7 @@ Tested on
 
 - iOS / Android / macOS / Windows / Linux
 - Unity 6000.3.11f1
-- TensorFlow 2.19.0
+- TensorFlow 2.21.0
 
 Included examples:
 
