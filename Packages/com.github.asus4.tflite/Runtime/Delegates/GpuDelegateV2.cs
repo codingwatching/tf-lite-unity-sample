@@ -129,11 +129,7 @@ namespace TensorFlowLite
         }
 
 #region Externs
-#if (UNITY_ANDROID && !UNITY_EDITOR)
         private const string TensorFlowLibraryGPU = "libtensorflowlite_gpu_delegate";
-#else
-        private const string TensorFlowLibraryGPU = "libtensorflowlite_gpu_delegate";
-#endif
 
         [DllImport(TensorFlowLibraryGPU)]
         private static extern unsafe Options TfLiteGpuDelegateOptionsV2Default();
