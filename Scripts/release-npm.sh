@@ -12,8 +12,9 @@ if [[ "${1:-}" == "--dry-run" ]]; then
     echo "Dry run mode enabled."
 fi
 
-# Publish a single tarball. Pre-release versions (e.g. 2.21.0-rc0) are tagged
-# 'canary'; stable versions are tagged 'latest'.
+# Publish a single tarball. 
+# Pre-release versions (e.g. 2.21.0-rc0) are tagged 'canary'.
+# Stable versions are tagged 'latest'.
 # Usage:
 # publish <package_tgz_file>
 publish() {
